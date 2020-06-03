@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Validator;
+use App\User;
+use Auth;
 
 class APILoginController extends Controller
 {
@@ -24,4 +27,45 @@ class APILoginController extends Controller
             
         ]);
     }
+    
+    public function register(Request $request){
+          $data = $request->all();
+
+       $validation = Validator::make($data,[
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
+      
+      if ($validation->fails()) {
+            return response()->json(['error'=>$validation->errors()],400);
+        }
+        else{
+
+             $user = User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+              return response()->json(['msg'=>'register user successfully','data'=>$user],200);
+        }
+
+    }
+
+
+       public function logout()
+        {
+            Auth::logout();
+            $data = [
+            'status' => true,
+            'code' => 200,
+            'data' => [
+            'message' => 'Successfully logged out'
+            ],
+            'err' => null
+            ];
+            return response()->json($data,200);
+        }
+
+
 }

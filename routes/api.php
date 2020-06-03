@@ -18,18 +18,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('login', 'APILoginController@login');
+Route::post('register', 'APILoginController@register');
 
 // users is a route protected by jwt
 Route::middleware('jwt.auth')->post('users', function () {
     return auth('api')->user();
 });
 Route::group(['middleware'=>'jwt.auth'],function(){
+  Route::get('logout','APILoginController@logout');
   
   Route::post('posts/add', 'Postcontroller@addpost');
   Route::get('post/all', 'Postcontroller@allpost');
   Route::post('post/delete', 'Postcontroller@deletePost');
   Route::post('post/update', 'Postcontroller@editpost');
-   Route::get('post/details/{id?}', 'Postcontroller@details');
+  Route::get('post/details/{id?}', 'Postcontroller@details');
 
 });
 
