@@ -310,6 +310,28 @@ http://localhost/apiAuth/api/post/update
         }
         </td></tr>
 </table>
+## delete Post:-
+<p>url:- http://localhost/apiAuth/api/post/delete</p>
+<strong>Perameter List</strong>
+<p>Authorization</p>
+<p>id</p>
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "Record deleted successfully",
+    "status": true,
+    "data": []
+}</td> <td>{
+    "msg": "id not exsists",
+    "status": false,
+    "data": []
+}</td>
+    </tr>
+</table>
 
 
 
