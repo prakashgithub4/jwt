@@ -149,7 +149,7 @@ http://localhost/apiAuth/api/login
 <tr>
     <td>Success</td>
     <td>Fail</td>
-    </tr>
+ </tr>
     <tr>
         <td>{
     "status": true,
@@ -157,12 +157,8 @@ http://localhost/apiAuth/api/login
     "data": {
         "message": "Successfully logged out"
     },
-    "err": null
-}</td>  
-        <td>
-       null
-        </td>
-        
+    "err": null}</td> 
+        <td>null</td>
     </tr>
 </table>
 
