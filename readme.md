@@ -116,6 +116,27 @@ https://medium.com/@manuelmauriciozamarrn/implementing-jwt-on-laravel-5-8-edc39f
 <p>email</p>
 <p>Passsword</p>
 
+ ## Logout 
+ url:http://localhost/apiAuth/api/logout
+ <strong>Method:get</strong>
+ <strong>AccessToken:- Authorization</strong>
+ <table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+ </tr>
+    <tr>
+        <td>{
+    "status": true,
+    "code": 200,
+    "data": {
+        "message": "Successfully logged out"
+    },
+    "err": null}</td> 
+        <td>null</td>
+    </tr>
+</table>
+
 
 ## Login api
 url
@@ -141,27 +162,6 @@ http://localhost/apiAuth/api/login
         
     </tr>
 </table>
- ## Logout 
- url:http://localhost/apiAuth/api/logout
- <strong>Method:get</strong>
- <strong>AccessToken:- Authorization</strong>
- <table>
-<tr>
-    <td>Success</td>
-    <td>Fail</td>
- </tr>
-    <tr>
-        <td>{
-    "status": true,
-    "code": 200,
-    "data": {
-        "message": "Successfully logged out"
-    },
-    "err": null}</td> 
-        <td>null</td>
-    </tr>
-</table>
-
 ## Post Api
  Add:
  <p>url: http://localhost/apiAuth/api/posts/add</p>
