@@ -265,6 +265,53 @@ http://localhost/apiAuth/api/post/update
         </td></tr>
 </table>
 
+## all Post
+<p>url:- http://localhost/apiAuth/api/post/all</p>
+<p>method:get</p>
+<p>Autherization</p>
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "post fetch successfully",
+    "status": true,
+    "data": [
+        {
+            "id": 11,
+            "title": "tet23",
+            "description": "tet23",
+            "image": "http://localhost/apiAuth/public/Images/1591017732.jpg"
+        },
+        {
+            "id": 12,
+            "title": "test1",
+            "description": "test1",
+            "image": "http://localhost/apiAuth/public/Images/1591018224.jpg"
+        },
+        {
+            "id": 13,
+            "title": "test2",
+            "description": "test1",
+            "image": "http://localhost/apiAuth/public/Images/1591225075.jpg"
+        },
+        {
+            "id": 14,
+            "title": "test2",
+            "description": "test1",
+            "image": "http://localhost/apiAuth/public/Images/1591225053.jpg"
+        }
+    ]
+}</td> <td>{
+          "msg":"data not exsists",
+        "status":false
+        }
+        </td></tr>
+</table>
+
+
 
  
  
