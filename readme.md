@@ -75,3 +75,264 @@ The Laravel framework is open-source software licensed under the [MIT license](h
 see this url for set up jwt
 
 https://medium.com/@manuelmauriciozamarrn/implementing-jwt-on-laravel-5-8-edc39f545886
+## method : Post
+# Register User
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "register user successfully",
+    "data": {
+        "name": "Rahul Roy",
+        "email": "rj@gmail.com",
+        "updated_at": "2020-06-03 22:23:55",
+        "created_at": "2020-06-03 22:23:55",
+        "id": 3
+    }
+}</td>  
+        <td>
+        {
+    "error": {
+        "name": [
+            "The name field is required."
+        ],
+        "email": [
+            "The email field is required."
+        ],
+        "password": [
+            "The password field is required."
+        ]
+    }
+}
+        </td>
+        
+    </tr>
+</table>
+<p>Perameter list</p>
+<p>name</p>
+<p>email</p>
+<p>Passsword</p>
+
+ ## Logout 
+ url:http://localhost/apiAuth/api/logout
+ <strong>Method:get</strong>
+ <strong>AccessToken:- Authorization</strong>
+ <table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+ </tr>
+    <tr>
+        <td>{
+    "status": true,
+    "code": 200,
+    "data": {
+        "message": "Successfully logged out"
+    },
+    "err": null}</td> 
+        <td>null</td>
+    </tr>
+</table>
+
+
+## Login api
+url
+http://localhost/apiAuth/api/login
+## method : Post
+
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaUF1dGhcL2FwaVwvbG9naW4iLCJpYXQiOjE1OTEyMjM4MTIsImV4cCI6MTU5MTIyNzQxMiwibmJmIjoxNTkxMjIzODEyLCJqdGkiOiJrMXQwT2FEYTJkNHhSSmg3Iiwic3ViIjozLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.ICDwQIwdMTTPd0cFjI4-TJsBOtc7vZDImjp2k3ya9hY",
+    "type": "bearer",
+    "expires": 3600
+}</td>  
+        <td>
+       {
+    "error": "Unauthorized"
+}
+        </td>
+        
+    </tr>
+</table>
+## Post Api
+ Add:
+ <p>url: http://localhost/apiAuth/api/posts/add</p>
+<p> method:post </p>
+
+<p>Perameter List</p>
+<p>Access token :- Autherization </p>
+<p>title</p>
+<p>desciption</p>
+<p>desciption</p>
+<p>photos</p>
+
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "post added successfully",
+    "status": true
+} </td>
+        <td>
+       {
+    "error": {
+        "title": [
+            "The title field is required."
+        ],
+        "desciption": [
+            "The desciption field is required."
+        ],
+        "photos": [
+            "The photos field is required."
+        ]
+    }
+}
+        </td>
+        
+    </tr>
+</table>
+
+## edit
+url:-
+http://localhost/apiAuth/api/post/update
+<p>Perameter List</p>
+<p>Autherization :bearer token</p>
+<p>id</p>
+<p>title</p>
+<p>desciption</p>
+<p>photos</p>
+
+
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "post updated successfully",
+    "status": true
+} </td>
+        <td>
+      {
+    "msg": "Id not found",
+    "status": false
+            }</td>
+        </tr>
+</table>
+## post Details
+
+<p>url: -http://localhost/apiAuth/api/post/details/12</p>
+<p>Method Get:-</p>
+<p>Authorization: bearer</p>
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "post fetch successfully",
+    "status": true,
+    "data": {
+        "id": 12,
+        "title": "test1",
+        "description": "test1",
+        "image": "1591018224.jpg",
+        "created_at": "2020-06-01 13:30:24",
+        "updated_at": "2020-06-01 13:30:24"
+    }
+} </td> <td>
+            {
+            "msg": "id is empty",
+            "status": false
+        }
+        </td></tr>
+</table>
+
+## all Post
+<p>url:- http://localhost/apiAuth/api/post/all</p>
+<p>method:get</p>
+<p>Autherization</p>
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "post fetch successfully",
+    "status": true,
+    "data": [
+        {
+            "id": 11,
+            "title": "tet23",
+            "description": "tet23",
+            "image": "http://localhost/apiAuth/public/Images/1591017732.jpg"
+        },
+        {
+            "id": 12,
+            "title": "test1",
+            "description": "test1",
+            "image": "http://localhost/apiAuth/public/Images/1591018224.jpg"
+        },
+        {
+            "id": 13,
+            "title": "test2",
+            "description": "test1",
+            "image": "http://localhost/apiAuth/public/Images/1591225075.jpg"
+        },
+        {
+            "id": 14,
+            "title": "test2",
+            "description": "test1",
+            "image": "http://localhost/apiAuth/public/Images/1591225053.jpg"
+        }
+    ]
+}</td> <td>{
+          "msg":"data not exsists",
+        "status":false
+        }
+        </td></tr>
+</table>
+## delete Post:-
+<p>url:- http://localhost/apiAuth/api/post/delete</p>
+<strong>Perameter List</strong>
+<p>Authorization</p>
+<p>id</p>
+<table>
+<tr>
+    <td>Success</td>
+    <td>Fail</td>
+    </tr>
+    <tr>
+        <td>{
+    "msg": "Record deleted successfully",
+    "status": true,
+    "data": []
+}</td> <td>{
+    "msg": "id not exsists",
+    "status": false,
+    "data": []
+}</td>
+    </tr>
+</table>
+
+
+
+ 
+ 
+ 
+ 
+
