@@ -160,7 +160,7 @@ http://localhost/apiAuth/api/login
     "err": null
 }</td>  
         <td>
-       
+       null
         </td>
         
     </tr>
@@ -187,8 +187,7 @@ http://localhost/apiAuth/api/login
         <td>{
     "msg": "post added successfully",
     "status": true
-} </td>  
-        
+} </td>
         <td>
        {
     "error": {
@@ -228,22 +227,19 @@ http://localhost/apiAuth/api/post/update
         <td>{
     "msg": "post updated successfully",
     "status": true
-} </td>  
-        
+} </td>
         <td>
       {
     "msg": "Id not found",
     "status": false
-}
-        </td>
-        
-    </tr>
+            }</td>
+        </tr>
 </table>
 ## post Details
 
-url: -http://localhost/apiAuth/api/post/details/12
-Method Get:-
-Authorization: bearer
+<p>url: -http://localhost/apiAuth/api/post/details/12</p>
+<p>Method Get:-</p>
+<p>Authorization: bearer</p>
 <table>
 <tr>
     <td>Success</td>
@@ -261,16 +257,12 @@ Authorization: bearer
         "created_at": "2020-06-01 13:30:24",
         "updated_at": "2020-06-01 13:30:24"
     }
-} </td>  
-        
-        <td>
+} </td> <td>
             {
             "msg": "id is empty",
             "status": false
         }
-        </td>
-        
-    </tr>
+        </td></tr>
 </table>
 
 
