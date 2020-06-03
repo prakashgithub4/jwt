@@ -61,9 +61,10 @@ class Postcontroller extends Controller
     }
     public function deletePost(Request $request)
     {
-        $id = $request->input("id");
-
-        if($id){
+      
+        $id = $request->post("id");
+     
+        if(!empty($id)){
 
         	$post = Post::find($id);
         	$destinationPath = public_path('Images');

@@ -26,10 +26,12 @@ Route::middleware('jwt.auth')->post('users', function () {
 });
 Route::group(['middleware'=>'jwt.auth'],function(){
   Route::get('logout','APILoginController@logout');
-  
+
   Route::post('posts/add', 'Postcontroller@addpost');
   Route::get('post/all', 'Postcontroller@allpost');
+  
   Route::post('post/delete', 'Postcontroller@deletePost');
+
   Route::post('post/update', 'Postcontroller@editpost');
   Route::get('post/details/{id?}', 'Postcontroller@details');
 
